@@ -150,7 +150,7 @@ def _table_style_get(style_node):
     return platypus.tables.TableStyle(styles)
 
 
-class RmlStyles(object):
+class RmlStyles:
 
     def __init__(self, nodes):
         self.styles = {}

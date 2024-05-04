@@ -18,7 +18,6 @@
 import re
 
 import reportlab.lib.units
-from six import text_type
 
 
 def text_get(node):
@@ -65,7 +64,7 @@ def attr_get(node, attrs, attrs_dict={}):
     for key in attrs_dict:
         if node.hasAttribute(key):
             if attrs_dict[key] == 'str':
-                res[key] = text_type(node.getAttribute(key))
+                res[key] = str(node.getAttribute(key))
             elif attrs_dict[key] == 'bool':
                 res[key] = bool_get(node.getAttribute(key))
             elif attrs_dict[key] == 'int':

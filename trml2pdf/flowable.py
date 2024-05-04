@@ -22,7 +22,6 @@
 
 # 1. system
 import sys
-from six import text_type
 # 2. 3rd parties
 from reportlab import platypus
 from reportlab.graphics.barcode import code39
@@ -39,7 +38,7 @@ def _child_get(node, childs):
     return clds
 
 
-class RmlFlowable(object):
+class RmlFlowable:
 
     def __init__(self, doc):
         self.doc = doc
@@ -66,7 +65,7 @@ class RmlFlowable(object):
                 rc += n.data
             elif n.nodeType == node.TEXT_NODE:
                 rc += n.toxml()
-        return text_type(rc)
+        return str(rc)
 
     def _list(self, node):
         list_style = self.styles.list_styles[node.getAttribute('style')] if node.hasAttribute('style') else platypus.flowables.ListStyle('Default')

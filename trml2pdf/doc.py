@@ -21,7 +21,6 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 # 1. system
-import io
 import xml.dom.minidom
 # 2. 3rd parties
 from reportlab import platypus
@@ -55,7 +54,7 @@ def docinit(els):
             addMapping(normal, 1, 1, bold_italic)  # italic and bold
 
 
-class RmlDoc(object):
+class RmlDoc:
 
     def __init__(self, data: str):
         self.dom = xml.dom.minidom.parseString(data)
@@ -84,7 +83,7 @@ class RmlDoc(object):
             self.canvas.save()
 
 
-class RmlTemplate(object):
+class RmlTemplate:
 
     def __init__(self, out, node, doc):
         if not node.hasAttribute('pageSize'):

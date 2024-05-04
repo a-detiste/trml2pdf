@@ -19,7 +19,7 @@ setup(
     maintainer='Roman Lyashov',
     maintainer_email='romitch@gmail.com',
     url='http://github.com/romanlv/trml2pdf/',
-    install_requires=['reportlab>=3.2.0', 'six>=1.9.0'],
+    install_requires=['reportlab>=3.2.0'],
     # dependency_links=[],
     include_package_data=True,
     packages=find_packages(exclude=['tests', 'tests.*']),

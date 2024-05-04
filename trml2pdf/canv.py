@@ -25,7 +25,7 @@ import copy
 import io
 import sys
 # 2. 3rd parties
-from six.moves import urllib
+import urllib.request
 from reportlab.lib.utils import ImageReader
 from reportlab.graphics.barcode import code128, qr
 # 3. local
@@ -34,7 +34,7 @@ from . import color, flowable, utils
 encoding = 'UTF-8'
 
 
-class RmlCanvas(object):
+class RmlCanvas:
 
     def __init__(self, canvas, doc_tmpl=None, doc=None):
         self.canvas = canvas
@@ -347,7 +347,7 @@ class RmlCanvas(object):
                         break
 
 
-class RmlDraw(object):
+class RmlDraw:
 
     def __init__(self, node, styles):
         self.node = node
